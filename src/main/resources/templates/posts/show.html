@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viewing Post</title>
+</head>
+<nav th:replace= "partials/navbar :: navbar"></nav>
+
+<body>
+
+<h1 th:text="${post.title}"></h1>
+<h3 th:text="${post.body}"></h3>
+<a th:href="@{'/posts/' + ${post.id} + '/edit'}">Edit Post</a>
+<form th:action="@{'/posts/' + ${post.id} + '/delete'}" th:method="POST">
+    <button>Delete</button>
+</form>
+
+</body>
+
+
+<footer th:replace= "partials/partials :: footer"></footer>
+</html>
