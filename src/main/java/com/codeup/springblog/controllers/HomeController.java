@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
     @GetMapping("/home")
-    public String welcome() { return "home"; }
-
-    @PostMapping("/")
-    public String returnCohort(@RequestParam(name = "cohort") String cohort, Model model){
-        model.addAttribute("cohort", cohort);
+    public String welcome(){
         return "home";
     }
+
+    @PostMapping("/")
+    public  String returnCohort(@RequestParam(name = "cohort") String cohort, Model model){
+        model.addAttribute("cohort", cohort);
+        return "home";
+
+    }
+
 }
